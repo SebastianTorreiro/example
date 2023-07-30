@@ -13,11 +13,11 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { CreateAlbumDto } from '../dto/create-album.dto'
-import { UpdateAlbumDto } from '../dto/update-album.dto';
-import { SongsService } from '../songs/songs.service';
-import { UserService } from '../user/user.service';
-import { AlbumsService } from './albums.service';
+import { CreateAlbumDto } from "../dto/create-album.dto"
+import { UpdateAlbumDto } from "../dto/update-album.dto";
+import { SongsService } from "../songs/songs.service";
+import { UserService } from "../user/user.service";
+import { AlbumsService } from "./albums.service";
 
 @ApiTags('Albums')
 @Controller('albums')

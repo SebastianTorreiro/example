@@ -33,7 +33,7 @@ export class MercadopagoService {
           pending: `${process.env.SELF_DEPLOY}`,
         },
         auto_return: 'approved',
-        notification_url: `https://81fb-179-41-172-150.ngrok-free.app/user/addsong?userid=${user_id}&songid=${id}`,
+        notification_url: `https://d20f-181-169-126-137.ngrok.io/user/addsong?userid=${user_id}&songid=${id}`,
       };
 
       console.log(preference);

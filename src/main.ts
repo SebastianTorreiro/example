@@ -13,7 +13,7 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-documentation', app, document);
-
+  const port = process.env.PORT || 4000
   app.useGlobalPipes(
     new ValidationPipe({
       transformOptions: {
@@ -25,6 +25,6 @@ async function bootstrap() {
     origin: 'http://localhost:3000',
     credentials: true,
   });
-  await app.listen(4000);
+  await app.listen(port);
 }
 bootstrap();

@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { AlbumsController } from './albums.controller';
 import { AlbumsService } from './albums.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Album, AlbumSchema } from 'src/schemas/album.schema';
+import { Album, AlbumSchema } from '../schemas/album.schema';
 import { ConfigModule } from '@nestjs/config';
 import { User, UserSchema } from '../schemas/user.schema';
-import { SongsService } from 'src/songs/songs.service';
-import { Song, SongSchema } from 'src/schemas/song.schema';
-import { UserService } from 'src/user/user.service';
+import { SongsService } from '../songs/songs.service';
+import { Song, SongSchema } from '../schemas/song.schema';
+import { UserService } from '../user/user.service';
 
 @Module({
   imports: [

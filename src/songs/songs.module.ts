@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { SongsService } from './songs.service';
 import { SongsController } from './songs.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Song, SongSchema } from 'src/schemas/song.schema';
+import { Song, SongSchema } from '../schemas/song.schema';
 import { ConfigModule } from '@nestjs/config';
-import { UserController } from 'src/user/user.controller';
-import { UserService } from 'src/user/user.service';
-import { User, UserSchema } from 'src/schemas/user.schema';
+import { UserController } from '../user/user.controller';
+import { UserService } from '../user/user.service';
+import { User, UserSchema } from '../schemas/user.schema';
 
 @Module({
   providers: [SongsService, UserService],

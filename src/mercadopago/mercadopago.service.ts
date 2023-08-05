@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Preference } from 'mercadopago';
-import { mercadoItemDto } from 'src/dto/mercadopago-item.dto';
+import { mercadoItemDto } from '../dto/mercadopago-item.dto';
 
 @Injectable()
 export class MercadopagoService {

@@ -5,9 +5,9 @@ import { ConfigModule } from '@nestjs/config';
 
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from '../schemas/user.schema';
-import { SongsService } from 'src/songs/songs.service';
-import { Song, SongSchema } from 'src/schemas/song.schema';
-import { SongsController } from 'src/songs/songs.controller';
+import { SongsService } from '../songs/songs.service';
+import { Song, SongSchema } from '../schemas/song.schema';
+import { SongsController } from '../songs/songs.controller';
 
 @Module({
   imports: [

@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { PublicationsUserController } from './publications-user.controller';
 import { PublicationsUserService } from './publications-user.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserService } from 'src/user/user.service';
-import { User, UserSchema } from 'src/schemas/user.schema';
+import { UserService } from '../user/user.service';
+import { User, UserSchema } from '../schemas/user.schema';
 import {
   Publications,
   PublicationsSchema,
-} from 'src/schemas/publications.schema';
+} from '../schemas/publications.schema';
 
 @Module({
   imports: [

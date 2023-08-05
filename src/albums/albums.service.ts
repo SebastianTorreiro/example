@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateAlbumDto } from 'src/dto/create-album.dto';
-import { UpdateAlbumDto } from 'src/dto/update-album.dto';
-import { Album } from 'src/schemas/album.schema';
+import { CreateAlbumDto } from '../dto/create-album.dto';
+import { UpdateAlbumDto } from '../dto/update-album.dto';
+import { Album } from '../schemas/album.schema';
 
 @Injectable()
 export class AlbumsService {

@@ -17,12 +17,12 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { v2 as cloudinary } from 'cloudinary';
 // import { diskStorage } from 'multer';
-import { GetArtirtsFilterDto } from 'src/dto/get-artists-filter.dto';
-import { PaginationQueryDto } from 'src/dto/pagination-query.dto';
-import { UpdateUserDto } from 'src/dto/update-user.dto';
-import { SongsService } from 'src/songs/songs.service';
+import { GetArtirtsFilterDto } from '../dto/get-artists-filter.dto';
+import { PaginationQueryDto } from '../dto/pagination-query.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
+import { SongsService } from '../songs/songs.service';
 import { UserService } from './user.service';
-import { ImageType } from 'src/enums/enums';
+import { ImageType } from '../enums/enums';
 
 @ApiTags('User')
 @Controller('user')

@@ -5,6 +5,7 @@ import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   const config = new DocumentBuilder()
     .setTitle('Soundwave')
     .setDescription('The Music API description')
@@ -13,7 +14,7 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-documentation', app, document);
-  const port = process.env.PORT || 4000
+
   app.useGlobalPipes(
     new ValidationPipe({
       transformOptions: {
@@ -21,10 +22,6 @@ async function bootstrap() {
       },
     }),
   );
-  app.enableCors({
-    origin: 'http://localhost:3000',
-    credentials: true,
-  });
-  await app.listen(port);
+  await app.listen(4000);
 }
 bootstrap();

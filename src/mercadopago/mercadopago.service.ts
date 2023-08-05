@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Preference } from 'mercadopago';
-import { mercadoItemDto } from '../dto/mercadopago-item.dto';
+import { mercadoItemDto } from 'src/dto/mercadopago-item.dto';
 
 @Injectable()
 export class MercadopagoService {
@@ -33,7 +33,7 @@ export class MercadopagoService {
           pending: `${process.env.SELF_DEPLOY}`,
         },
         auto_return: 'approved',
-        notification_url: `https://d20f-181-169-126-137.ngrok.io/user/addsong?userid=${user_id}&songid=${id}`,
+        notification_url: `https://0443-181-169-126-137.ngrok.io/user/addsong?userid=${user_id}&songid=${id}`,
       };
 
       console.log(preference);

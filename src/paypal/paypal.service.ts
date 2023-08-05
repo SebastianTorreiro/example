@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 // import { PayPalHttpClient, core } from '@paypal/checkout-server-sdk';
 import axios from 'axios';
-import { paypalItemDto } from '../dto/paypal-item.dto';
+import { paypalItemDto } from 'src/dto/paypal-item.dto';
 
 @Injectable()
 export class PaypalService {

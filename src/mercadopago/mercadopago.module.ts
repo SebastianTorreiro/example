@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { MercadopagoService } from './mercadopago.service';
 import { ConfigModule } from '@nestjs/config';
-import { UserController } from '../user/user.controller';
-import { SongsController } from '../songs/songs.controller';
-import { UserService } from '../user/user.service';
-import { SongsService } from '../songs/songs.service';
+import { UserController } from 'src/user/user.controller';
+import { SongsController } from 'src/songs/songs.controller';
+import { UserService } from 'src/user/user.service';
+import { SongsService } from 'src/songs/songs.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User, UserSchema } from '../schemas/user.schema';
-import { Song, SongSchema } from '../schemas/song.schema';
+import { User, UserSchema } from 'src/schemas/user.schema';
+import { Song, SongSchema } from 'src/schemas/song.schema';
 import { MercadopagoController } from './mercadopago.controller';
 
 @Module({

@@ -15,6 +15,10 @@ export class CreateUserDto {
   @IsOptional()
   googleId?: string;
 
+  @IsString()
+  @IsOptional()
+  image?: string;
+
   @ApiProperty({
     description: 'Nombre del Usuario',
     example: 'Juan',

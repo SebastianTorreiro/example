@@ -44,6 +44,7 @@ export class AuthJwtController {
       });
 
       const { ...userWithoutPassword } = user;
+
       return res.status(HttpStatus.OK).json(userWithoutPassword);
     } catch (err) {
       console.log(err);
@@ -79,6 +80,32 @@ export class AuthJwtController {
     } catch (err) {
       console.log(err.message);
       return res.sendStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  @ApiOperation({ summary: 'Login' })
+  @Post('/googleauth')
+  async login2(@Res() res, @Body('token') body) {
+    try {
+      const { name, email, image } = body;
+
+      let user = await this.AuthUserService.getUserByEmail(email);
+
+      if (!user) {
+        user = await this.AuthUserService.createUser({
+          name: name,
+          image: image,
+          email: email,
+          password: 'password123',
+        });
+      }
+
+      return res.status(200).json({ message: 'Login successful', user });
+    } catch (error) {
+      console.log(error);
+      return res
+        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .json({ message: error });
     }
   }
 

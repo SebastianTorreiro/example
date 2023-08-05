@@ -3,10 +3,10 @@ import { InjectModel } from '@nestjs/mongoose';
 
 import { v2 as cloudinary } from 'cloudinary';
 import mongoose, { Model } from 'mongoose';
-import { CreateSongDto } from '../dto/create-song.dto';
-import { PaginationQueryDto } from '../dto/pagination-query.dto';
-import { UpdateSongDto } from '../dto/update-songs';
-import { Song } from '../schemas/song.schema';
+import { CreateSongDto } from 'src/dto/create-song.dto';
+import { PaginationQueryDto } from 'src/dto/pagination-query.dto';
+import { UpdateSongDto } from 'src/dto/update-songs';
+import { Song } from 'src/schemas/song.schema';
 
 @Injectable()
 export class SongsService {

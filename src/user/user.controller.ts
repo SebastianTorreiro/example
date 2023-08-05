@@ -17,12 +17,12 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { v2 as cloudinary } from 'cloudinary';
 // import { diskStorage } from 'multer';
-import { GetArtirtsFilterDto } from '../dto/get-artists-filter.dto';
-import { PaginationQueryDto } from '../dto/pagination-query.dto';
-import { UpdateUserDto } from '../dto/update-user.dto';
-import { SongsService } from '../songs/songs.service';
+import { GetArtirtsFilterDto } from 'src/dto/get-artists-filter.dto';
+import { PaginationQueryDto } from 'src/dto/pagination-query.dto';
+import { UpdateUserDto } from 'src/dto/update-user.dto';
+import { SongsService } from 'src/songs/songs.service';
 import { UserService } from './user.service';
-import { ImageType } from '../enums/enums';
+import { ImageType } from 'src/enums/enums';
 
 @ApiTags('User')
 @Controller('user')
@@ -74,13 +74,22 @@ export class UserController {
           .status(HttpStatus.OK)
           .json({ message: 'El follower ya lo sigue al usuario' });
       }
-      userClient.favoriteArtists.push(followerId);
-      userArtist.followers.push(id);
 
+      if (userArtist.followers.includes(id)) {
+        return res
+          .status(HttpStatus.OK)
+          .json({ message: 'El follower ya lo sigue al usuario' });
+      }
+
+      userClient.favoriteArtists.push(followerId);
       await this.userService.updateById(id, userClient);
+
+      userArtist.followers.push(id);
       await this.userService.updateById(followerId, userArtist);
 
-      return res.status(HttpStatus.OK).json({ userClient, userArtist });
+      return res
+        .status(HttpStatus.OK)
+        .json({ message: 'Se ha agregado un follower correctamente.' });
     } catch (error) {
       console.log(error);
       return res.status(HttpStatus.BAD_GATEWAY);
@@ -98,20 +107,18 @@ export class UserController {
     try {
       const userClient = await this.userService.getById(id);
       const userArtist = await this.userService.getById(followerId);
-      if (userClient.favoriteArtists.includes(followerId) === false) {
+      if (!userClient.favoriteArtists.includes(followerId)) {
         return res
           .status(HttpStatus.OK)
           .json({ message: 'El follower no lo sigue al usuario' });
       }
-
       const newFavoritesArtist = userClient.favoriteArtists.filter(
-        (id) => id === followerId,
+        (id) => id != followerId,
       );
-      console.log(newFavoritesArtist);
       userClient.favoriteArtists = newFavoritesArtist;
       await this.userService.updateById(id, userClient);
 
-      const newFollowers = userArtist.followers.filter((ids) => ids === id);
+      const newFollowers = userArtist.followers.filter((ids) => ids != id);
       userArtist.followers = newFollowers;
       await this.userService.updateById(followerId, userArtist);
 
@@ -343,7 +350,7 @@ export class UserController {
     @Res() res,
   ) {
     try {
-      if (notificationData) {
+      if (notificationData.type === 'payment') {
         const data = await this.mercadopago.payment.findById(
           notificationData.data.id,
         );

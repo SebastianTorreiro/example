@@ -18,10 +18,10 @@ import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { v2 as cloudinary } from 'cloudinary';
 import { Model, ObjectId } from 'mongoose';
 // import { CloudinaryStorage } from 'multer-storage-cloudinary';
-import { CreatePlaylistDto } from '../../dto/dto-playlist/create-playlist.dto';
-import { UpdatePlaylistDto } from '../../dto/dto-playlist/update-playlist.dto';
-import { Playlist, PlaylistDocument } from '../../schemas/playlist.schema';
-import { SongsService } from '../../songs/songs.service';
+import { CreatePlaylistDto } from 'src/dto/dto-playlist/create-playlist.dto';
+import { UpdatePlaylistDto } from 'src/dto/dto-playlist/update-playlist.dto';
+import { Playlist, PlaylistDocument } from 'src/schemas/playlist.schema';
+import { SongsService } from 'src/songs/songs.service';
 import { PlaylistService } from '../playlist.service';
 
 @ApiTags('Playlist')

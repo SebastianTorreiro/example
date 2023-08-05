@@ -1,8 +1,8 @@
 import { Controller, HttpStatus, Param, Post, Res } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { paymentType } from '../enums/enums';
-import { User } from '../schemas/user.schema';
-import { UserService } from '../user/user.service';
+import { paymentType } from 'src/enums/enums';
+import { User } from 'src/schemas/user.schema';
+import { UserService } from 'src/user/user.service';
 
 @Controller('status')
 export class MercadopagoController {

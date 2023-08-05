@@ -9,11 +9,11 @@ import {
 } from '@nestjs/common';
 import { MercadopagoService } from '../mercadopago/mercadopago.service';
 import { PaypalService } from '../paypal/paypal.service';
-import { paypalItemDto } from '../dto/paypal-item.dto';
-import { mercadoItemDto } from '../dto/mercadopago-item.dto';
+import { paypalItemDto } from 'src/dto/paypal-item.dto';
+import { mercadoItemDto } from 'src/dto/mercadopago-item.dto';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { SongsService } from '../songs/songs.service';
-import { UserService } from '../user/user.service';
+import { SongsService } from 'src/songs/songs.service';
+import { UserService } from 'src/user/user.service';
 
 @ApiTags('Pagos')
 @Controller('payment')

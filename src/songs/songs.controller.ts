@@ -14,9 +14,9 @@ import {
 } from '@nestjs/common';
 import { FileFieldsInterceptor } from '@nestjs/platform-express';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { CreateSongDto } from '../dto/create-song.dto';
-import { PaginationQueryDto } from '../dto/pagination-query.dto';
-import { UserService } from '../user/user.service';
+import { CreateSongDto } from 'src/dto/create-song.dto';
+import { PaginationQueryDto } from 'src/dto/pagination-query.dto';
+import { UserService } from 'src/user/user.service';
 
 import { SongsService } from './songs.service';
 

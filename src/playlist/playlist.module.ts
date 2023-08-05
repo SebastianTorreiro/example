@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { PlaylistController } from './controllers/playlist.controller';
 import { PlaylistService } from './playlist.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { PlaylistSchema, Playlist } from '../schemas/playlist.schema';
+import { PlaylistSchema, Playlist } from 'src/schemas/playlist.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { SongsService } from '../songs/songs.service';
-import { Song, SongSchema } from '../schemas/song.schema';
+import { SongsService } from 'src/songs/songs.service';
+import { Song, SongSchema } from 'src/schemas/song.schema';
 
 @Module({
   imports: [

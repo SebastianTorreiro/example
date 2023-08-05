@@ -9,9 +9,9 @@ import {
   NotFoundException,
   HttpStatus,
 } from '@nestjs/common';
-import { Publications } from '../schemas/publications.schema';
+import { Publications } from 'src/schemas/publications.schema';
 import { PublicationsUserService } from './publications-user.service';
-import { CreatePublicationDto } from '../dto/create-publication.dto';
+import { CreatePublicationDto } from 'src/dto/create-publication.dto';
 
 @Controller('publications')
 export class PublicationsUserController {
